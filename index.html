@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Driver Drowsiness Detection System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MediaPipe Face Mesh -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚗 Driver Drowsiness Detection System</h1>
+
+    <p class="subtitle">
+        Face monitoring and drowsiness detection
+    </p>
+
+    <!-- CAMERA -->
+    <div class="camera-box">
+
+        <video id="video"
+               autoplay
+               muted
+               playsinline>
+        </video>
+
+        <canvas id="canvas"></canvas>
+
+        <div id="cameraMessage">
+            Camera not started
+        </div>
+
+    </div>
+
+
+    <!-- STATUS -->
+
+    <div class="status-container">
+
+        <div class="status-card">
+
+            <h3>Face</h3>
+
+            <p id="faceStatus">
+                Waiting...
+            </p>
+
+        </div>
+
+
+        <div class="status-card">
+
+            <h3>Eyes</h3>
+
+            <p id="eyeStatus">
+                Waiting...
+            </p>
+
+        </div>
+
+
+        <div class="status-card">
+
+            <h3>System</h3>
+
+            <p id="systemStatus">
+                Ready
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FACE TIMER -->
+
+    <div class="timer-box">
+
+        <h2>Face Not Detected</h2>
+
+        <div id="faceTimer">
+            0.0
+        </div>
+
+        <p>
+            Alarm activates after 7 seconds
+        </p>
+
+    </div>
+
+
+    <!-- BUTTON -->
+
+    <button id="startButton">
+        🎥 Start Camera
+    </button>
+
+
+    <button id="testAlarmButton">
+        🔊 Test Alarm
+    </button>
+
+
+    <!-- ERROR -->
+
+    <div id="errorBox"></div>
+
+
+    <!-- INFORMATION -->
+
+    <div class="info">
+
+        <h2>How it works</h2>
+
+        <p>
+            The system continuously monitors the driver's face.
+        </p>
+
+        <p>
+            If the face is not detected for 7 continuous seconds,
+            the warning alarm activates.
+        </p>
+
+        <p>
+            The system also monitors the eyes for signs of drowsiness.
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
